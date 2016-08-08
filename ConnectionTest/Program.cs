@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 
 namespace ConnectionTest
@@ -44,7 +45,7 @@ namespace ConnectionTest
                     new SPparameter() {Name = "State", Value = "OR" }
                 };
 
-                connector.ExecuteStoredProcedure("AddUser", parameters, System.Data.CommandType.StoredProcedure);
+                connector.ExecuteStoredProcedure("AddUser", parameters, CommandType.StoredProcedure);
                 if (connector.HasError)
                     Console.WriteLine(connector.ErrorMessage);
                 else
